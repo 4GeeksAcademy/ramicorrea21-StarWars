@@ -4,7 +4,7 @@ import { Context } from '../store/appContext'
 import { Link } from 'react-router-dom'
 
 const CardPeople = () => {
-    const { store } = useContext(Context)
+    const { store, actions } = useContext(Context)
     return (
         <div className='d-flex'>
             {store.people.map((p) => {
@@ -18,8 +18,9 @@ const CardPeople = () => {
                                 <p className='m-0 p-0'>Hair Color: {p.properties.hair_color}</p>
                                 <p className='m-0 p-0'>Eye-Color: {p.properties.eye_color}</p>
                             </div>
-                            <div className='d-flex justify-content-space-between'>
-                            <Link to={`/details/${p.uid}`} className="btn btn-primary">Go somewhere</Link>
+                            <div className='d-flex justify-content-between'>
+                            <Link to={`/details/${p.uid}`} className="btn btn-primary">Learn More!</Link>
+                            <button onClick={() => actions.addToFav(p)} className='btn btn-warning'><i className="fa-solid fa-star"></i></button>
                             </div>
                         </div>
                     </div>

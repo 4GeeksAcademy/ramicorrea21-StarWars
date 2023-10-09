@@ -72,8 +72,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addToFav : (fav) =>{
 				let store = getStore()
+				let isInFav = store.favorites.some((item) => item._id == fav._id )
+				if(isInFav === false){
+					setStore({
+						favorites : [...store.favorites, fav]
+					})
+				}
+					
+				
+			},
+			deleteFav : (favdelete) =>{
+				let store = getStore()
+				let auxFav = store.favorites.filter((item) => item._id =! favdelete._id)
 				setStore({
-					favorites : [...favorites, fav]
+					favorites : [auxFav]
 				})
 			}
 		}
