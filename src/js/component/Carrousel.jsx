@@ -1,9 +1,12 @@
 import React from "react";
-
-const Carrousel = () =>{
-    return(
+import CardPeople from './CardPeople.jsx'
+const Carrousel = () => {
+    return (
         <>
-        Carrousel
+            <h1>Characters</h1>
+            <div className="container d-flex">
+                <CardPeople/>
+            </div>
         </>
     )
 }

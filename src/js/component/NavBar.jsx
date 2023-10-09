@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className="bg-light">
             <nav className="navbar bg-body-tertiary container">
                 <div className="container-fluid">
-                    <Link to="/">STAR WARS</Link>
+                    <Link to="/" className="navbar-brand">STAR WARS</Link>
                     <div className="dropdown">
                         <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown button
