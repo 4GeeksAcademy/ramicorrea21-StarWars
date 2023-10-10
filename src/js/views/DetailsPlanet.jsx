@@ -31,7 +31,7 @@ const  DetailsPlanet = () => {
                                         <p className="m-1 p-1 fw-bold">Name</p>
                                         <p className="m-1 p-1">{detPlanet?.properties?.name}</p>
                                     </div>
-                                    * <div className="row my-2 ">
+                                    <div className="row my-2 ">
                                         <p className="m-1 p-1 fw-bold">Climate</p>
                                         <p className="m-1 p-1">{detPlanet?.properties?.climate}</p>
                                     </div>
@@ -40,15 +40,15 @@ const  DetailsPlanet = () => {
                                         <p className="m-1 p-1">{detPlanet?.properties?.population}</p>
                                     </div>
                                     <div className="row my-2">
-                                        <p className="m-1 p-1 fw-bold">Orbital - Period</p>
+                                        <p className="m-1 p-1 fw-bold mx-2">Orbital Period</p>
                                         <p className="m-1 p-1">{detPlanet?.properties?.orbital_period}</p>
                                     </div>
-                                    <div className="row my-2">
-                                        <p className="m-1 p-1 fw-bold">Rotation-Period</p>
+                                    <div className="row my-2 mx-2">
+                                        <p className="m-1 p-1 fw-bold">Rotation Period</p>
                                         <p className="m-1 p-1">{detPlanet?.properties?.rotation_period}</p>
                                     </div>
                                     <div className="row my-2">
-                                        <p className="m-1 p-1 fw-bold">Eye Color</p>
+                                        <p className="m-1 p-1 fw-bold">Diameter</p>
                                         <p className="m-1 p-1">{detPlanet?.properties?.diameter}</p>
                                     </div> 
                                 </div>

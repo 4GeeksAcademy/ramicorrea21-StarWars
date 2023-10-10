@@ -17,7 +17,7 @@ const  CardPlanets = () => {
                                 <p className='m-0 p-0'>Population: {p.properties.population}</p>
                                 <p className='m-0 p-0'>Terrain: {p.properties.terrain}</p>
                             </div>
-                            <div className='d-flex justify-content-between'>
+                            <div className='d-flex justify-content-between my-1'>
                             <Link to={`/planets/${p.uid}`} className="btn btn-primary">Learn More!</Link>
                             <button onClick={() => actions.addToFav(p)} className='btn btn-warning'><i className="fa-solid fa-star"></i></button>
                             </div>

@@ -18,8 +18,8 @@ const Favorites = () =>{
                             {store.favorites.map((fav) =>{
                                 return(
                                     <li key={fav.uid} className="d-flex justify-content-between">
-                                        <Link className="dropdown-item" to={`/details/${fav.uid}`}>{fav?.properties?.name}</Link>
-                                        <button className="btn" onClick={() => actions.deleteFav(fav.uid) }>
+                                        <Link className="dropdown-item" to={`/${fav.nature}/${fav.uid}`}>{fav?.properties?.name}</Link>
+                                        <button className="btn" onClick={() => actions.deleteFav(fav._id) }>
                                         <i className="fa-solid fa-trash"></i>
                                         </button>
                                         </li>

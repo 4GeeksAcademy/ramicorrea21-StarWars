@@ -17,7 +17,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			character : {},
 			favorites :[],
 			planets : [],
-			planetdetail : {}
+			planetdetail : {},
+			vehicles : [],
+			vehicledetail : {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -54,6 +56,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						fetch(element.url)
 						.then(res => res.json())
 						.then(data => {
+							data.result = {
+								...data.result, 
+								nature : "details"
+							}
 							setStore({
 								people : [...store.people, data.result]
 							})
@@ -85,7 +91,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			deleteFav : (favdelete) =>{
 				let store = getStore()
-				let auxFav = store.favorites.filter((item) => item.uid != favdelete)
+				let auxFav = store.favorites.filter((item) => item._id != favdelete)
 				setStore({
 					favorites : auxFav
 				})
@@ -101,6 +107,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						fetch(element.url)
 						.then(res => res.json())
 						.then(data => {
+							data.result = {
+								...data.result, 
+								nature : "planets"
+							}
 							setStore({
 								planets : [...store.planets, data.result]
 							})
@@ -119,6 +129,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				})
 			},
+			getVehicles : async() =>{
+				let store = getStore()
+				try {
+					let response = await fetch('https://www.swapi.tech/api/vehicles')
+					let data = await response.json()
+					let vehicles = await data.results
+
+					vehicles.forEach(element => {
+						fetch(element.url)
+						.then(res => res.json())
+						.then(data => {
+							data.result = {
+								...data.result, 
+								nature : "vehicles"
+							}
+							setStore({
+								vehicles : [...store.vehicles, data.result]
+							})
+						})
+					});
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			getVehicle : (id) =>{
+				fetch(`https://www.swapi.tech/api/vehicles/${id}`)
+				.then(res => res.json())
+				.then(data => {
+					setStore({
+						vehicledetail : data.result
+					})
+				})
+			}
 		}
 	};
 };
