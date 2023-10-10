@@ -7,6 +7,7 @@ import Carrousel from '../component/Carrousel.jsx'
 		<>
 		<div className="container my-3">
 			<Carrousel/>
+			
 		</div>
 		</>
 	)

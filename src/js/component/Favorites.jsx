@@ -19,7 +19,7 @@ const Favorites = () =>{
                                 return(
                                     <li key={fav.uid} className="d-flex justify-content-between">
                                         <Link className="dropdown-item" to={`/details/${fav.uid}`}>{fav?.properties?.name}</Link>
-                                        <button className="btn" onClick={() => actions.deleteFav(fav) }>
+                                        <button className="btn" onClick={() => actions.deleteFav(fav.uid) }>
                                         <i className="fa-solid fa-trash"></i>
                                         </button>
                                         </li>
